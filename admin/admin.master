@@ -1,0 +1,305 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin_admin" %>
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from html.alfisahr.com/prudence/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2017 09:21:50 GMT -->
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="x-ua-compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+    <link href="assets/plugins/DataTables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <form id="f1" runat="server">
+    <div id="page-container">
+        <nav id="sidebar" class="sidenav">
+            <div class="sidebar-wrapper">
+                <div class="profile-sidebar">
+                    <div class="avatar">
+                        <img src="assets/images/profiles/05.jpg" alt="">
+                    </div>
+                    <div class="profile-name">
+                        Admin
+                        
+                    </div>
+                    <div class="profile-title">
+                        Administrator
+                    </div>
+                </div>
+                <ul class="main-menu" id="menus">
+                    <li>
+                        <a href="customer_details.aspx">
+                            <span class="icon ti-user"></span>Customer Details
+</a>
+                       
+                    </li>
+                  
+                    <li>
+                        <a class="pr-mn collapsed" data-toggle="collapse" href="#uielements" aria-expanded="true">
+                            <span class="icon ti-plus"></span>Products
+</a>
+                        <ul id="uielements" class="collapse" data-parent="#menus">
+                            <li><a href="add_product.aspx">Add Product</a></li>
+                            <li><a href="display_product.aspx">Display Product</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="display_order.aspx">
+                            <span class="icon ti-home"></span>Orders
+</a>
+                       
+                    </li>
+                  
+                      <li>
+                        <a href="sales_report.aspx">
+                            <span class="icon ti-home"></span>Sales
+</a>
+                       
+                    </li>
+                  
+
+                    <li>
+                        <a href="add_category.aspx">
+                            <span class="icon ti-home"></span>Category
+</a>
+                       
+                    </li>
+                  
+                    <li>
+                        <a href="logout.aspx">
+                            <span class="icon ti-close"></span>LogOut
+</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <header id="page-header" class="pageheader">
+            <div class="content-header">
+                <div class="navbar-header">
+                    <button type="button" class="btn-bars btn">
+                        <span class="ti-menu"></span>
+                    </button>
+                    <div class="app-title">
+                       Grocery Admin
+                    </div>
+                    <div class="mobile-nav">
+                        <button class="btn" type="button" id="mobileBtn">
+                            <i class="ti-layout-grid2-alt"></i>
+                        </button>
+                    </div>
+                </div>
+               
+            </div>
+        </header>
+        <aside id="right-sidebar" class="r_sidebar">
+            <div class="content-wrapper">
+                <a href="javascript:void(0)" class="close-btn">
+                    <span class="ti-close"></span>
+                </a>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="today-tab" data-toggle="tab" href="#today" aria-expanded="true">Today</a></li>
+                    <li class="nav-item"><a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting">Setting</a>
+                    </li>
+                </ul>
+                <div class="tab-content sidebar-wrapper scrollbar-inner" id="myTabContent">
+                    <div class="tab-pane fade show active" id="today">
+                        <div class="today-date">
+                            <span class="strong"><span id="prMonth"></span><span id="prDate"></span></span>, <span id="prYear"></span>
+                            <span id="prDay"></span>
+                        </div>
+                        <div class="block-tab">
+                            <div class="block-title">
+                                <span class="ti-time"></span>Schedule
+                            </div>
+                            <ul class="schedule-list list-unstyled">
+                                <li>
+                                    <div class="time">
+                                        09.00<span>AM</span>
+                                    </div>
+                                    <div class="point"></div>
+                                    <div class="schedule-info">
+                                        Briefing with product division
+                                        <span class="location"><span class="ti-location-pin"></span>New York, NA</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="time">
+                                        11.00<span>AM</span>
+                                    </div>
+                                    <div class="point"></div>
+                                    <div class="schedule-info">
+                                        Meeting with client
+                                        <span class="location"><span class="ti-location-pin"></span>Client office</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="time">
+                                        01.30<span>PM</span>
+                                    </div>
+                                    <div class="point"></div>
+                                    <div class="schedule-info">
+                                        Project commisioning<span class="location"><span class="ti-location-pin"></span> Office</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="time">
+                                        04.00<span>AM</span>
+                                    </div>
+                                    <div class="point"></div>
+                                    <div class="schedule-info">
+                                        Public discussion at office<span class="location"><span class="ti-location-pin"></span> Cafetaria</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="block-tab">
+                            <div class="block-title">
+                                <span class="ti-flag"></span>Activity Log
+                            </div>
+                            <ul class="activity-list list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <span class="ti-image"></span>
+                                    </div>
+                                    <div class="log-info">
+                                        Photo profile has been updated<small>2 min ago</small>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="ti-email"></span>
+                                    </div>
+                                    <div class="log-info">
+                                        New email to <strong>John Cenna</strong> sent<small>4 hrs ago</small>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="ti-email"></span>
+                                    </div>
+                                    <div class="log-info">
+                                        You compose new email
+                                        <small>6 hrs ago</small>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="ti-email"></span>
+                                    </div>
+                                    <div class="log-info">
+                                        You compose new email
+                                        <small>1 day ago</small>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="setting">
+                        <ul class="setting-list list-unstyled">
+                            <li class="header">Main system</li>
+                            <li>
+                                <div class="setting-name">
+                                    Notifications
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" class="js-switch" data-size="small" checked />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="setting-name">
+                                    Auto updates
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" class="js-switch" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="setting-name">
+                                    Location
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" class="js-switch" data-size="small" checked />
+                                </div>
+                            </li>
+                            <li class="header">Assistant
+</li>
+                            <li>
+                                <div class="setting-name">
+                                    Show Assistant
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" class="js-switch" data-size="small" />
+                                </div>
+                            </li>
+                            <li class="header">Appearances
+</li>
+                            <li>
+                                <div class="setting-name">
+                                    Save history
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" class="js-switch" data-size="small" checked />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="setting-name">
+                                    Quick results
+                                </div>
+                                <div class="switch">
+                                    <input type="checkbox" class="js-switch" data-size="small" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+
+        <!-- MAIN CONTAINER -->
+        <main id="main-container">
+           
+
+            <div class="content">
+
+                <div class="row" style="min-height:500px">
+                    <asp:ContentPlaceHolder ID="c1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <!-- .row -->
+
+
+
+
+            </div>
+            <!-- .content -->
+        </main>
+    </div>
+
+    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/holder.js"></script>
+    <script type="text/javascript" src="assets/plugins/switchery/switchery.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="assets/plugins/counter-up-master/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/chart.js/Chart.bundle.js"></script>
+    <script src="assets/plugins/DataTables/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/pages/table-data.js"></script>
+    <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+    <script src="assets/plugins/card-refresh/refresh.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+        </form>
+</body>
+
+</html>
